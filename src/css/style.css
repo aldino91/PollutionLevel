@@ -1,0 +1,18 @@
+
+
+.sfondo{
+    width: 100vw;
+    height: 100vh;
+    background-image:url(../immagini/sfondo-1.jpg);
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size:cover; 
+    background-attachment: fixed; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (max-width: 700px) {
+    .sfondo{
+        background-position: left;  
+    }
+  }
