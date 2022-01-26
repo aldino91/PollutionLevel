@@ -53,9 +53,9 @@ export const geoLocation = async () => {
 export const getPollution = async () => {
   try {
     const respo = await axios(`${url}/?token=${TOKEN}&keyword=${input.value}`);
+    console.log(respo);
     const data = _.get(respo, "data.data[0]", "DEFAULT");
     const aqi = data.aqi;
-    const urlInfo = _.get(respo, "config.url", "DEFAULT");
     const time = new Date();
     const li = document.createElement("li");
     const list = document.querySelector(".list");
@@ -95,7 +95,6 @@ export const getPollution = async () => {
   }</h3>
   </div>
   <h3>Day: ${time.toDateString()}</h3>
-  <h3 class="underline"><a href=${urlInfo}>For more info!</a></h3>
   </div>`;
     li.innerHTML = descrip;
     list.insertBefore(li, list.childNodes[0]);
